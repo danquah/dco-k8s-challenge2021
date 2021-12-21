@@ -4,8 +4,8 @@ output "loki_bucket_name" {
 }
 
 output "loki_bucket_endpoint" {
-  description = "Full URN for the bucket endpoint"
-  value       = digitalocean_spaces_bucket.loki.bucket_domain_name
+  description = "S3 compatible endpoint for the bucket"
+  value       = "${digitalocean_spaces_bucket.velero.region}.digitaloceanspaces.com"
 }
 
 output "loki_bucket_region" {
@@ -19,8 +19,8 @@ output "velero_bucket_name" {
 }
 
 output "velero_bucket_endpoint" {
-  description = "Full URN for the bucket endpoint"
-  value       = digitalocean_spaces_bucket.velero.bucket_domain_name
+  description = "S3 compatible endpoint for the bucket"
+  value       = "${digitalocean_spaces_bucket.velero.region}.digitaloceanspaces.com"
 }
 
 output "velero_bucket_region" {
