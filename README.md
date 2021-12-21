@@ -4,7 +4,6 @@ DigitalOcean Kubernetes Challenge
 
 Based on [Chapter 15 of Kubernetes-Starter-Kit-Developers](https://github.com/digitalocean/Kubernetes-Starter-Kit-Developers/tree/main/15-automate-with-terraform-flux)
 
-
 ## Boostrapping
 
 1. Setup the required [prerequisites](https://github.com/digitalocean/Kubernetes-Starter-Kit-Developers/tree/main/15-automate-with-terraform-flux#prerequisites) - skip the creation of the flux
@@ -18,6 +17,7 @@ Based on [Chapter 15 of Kubernetes-Starter-Kit-Developers](https://github.com/di
    1. When provisioning Loki, remember to edit the `HelmRelease` and insert the
       endpoints and keys for the aws `storage_config`. Use the spaces key/secret
       from `init.env` and get the bucket name and endpoint from `terraform output`
+   2. Same goes for the Velero installation
 
 ## Notes
 - The `init.env` has to be sourced (`source init.env`) prior to doing anything with TF
