@@ -11,7 +11,9 @@ terraform {
   }
 }
 # Configure the GitHub Provider
-provider "github" {}
+provider "github" {
+  token = var.github_token
+}
 
 provider "digitalocean" {
   token = var.do_api_token
