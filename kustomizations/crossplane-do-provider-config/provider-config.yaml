@@ -1,0 +1,12 @@
+---
+apiVersion: do.crossplane.io/v1alpha1
+kind: ProviderConfig
+metadata:
+  name: do-k8s-challenge-2021
+spec:
+  credentials:
+    source: Secret
+    secretRef:
+      namespace: crossplane-system
+      name: digital-ocean-token
+      key: token

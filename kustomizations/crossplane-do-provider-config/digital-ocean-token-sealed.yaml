@@ -1,0 +1,16 @@
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  creationTimestamp: null
+  name: digital-ocean-token
+  namespace: flux-system
+spec:
+  encryptedData:
+    token: AgAZDsnLuOdvzy9ZJ0pXr4l8ux52u8htWXWNDyCnDW6JlBTv2g8gkf9rh+A7cM7mKPQiQArr27D0Xj0w2gdtozY67la6NPXKAJDC3SqnGBWloVhefxKPNA3XVDfMhTAO3AmvjH0eZjpRBuTZCbp0tjXszoGAN1WJSQY17mnaiHU7QXGnu4MNpvF58rMEPeiMjbvhhfwKl67o7ByGoNS38hh5rIcELjqDT2hnND0jc/9VTfo6dRMZdrJjCzpfHjyqI6Y1wrHuMPIuwKYqXxYaNJBTaFkeLZWPJ6grTi8N0DnXTNSh9j9dBtM7oC0vfvH/kUvuZ4eRb/l/xxc25NCEzz+sD381JM9Fj0f7KgQzjB7UjX/T6WvdGZH4azXe79rruMci6vt1gUL+u1NSvUxtjAy2v7hAU0R4LQay0xzMnV+XToxz2rOUUA9eKC/V+fqbge9ukSxRXYUIjilVB0UKEKo4mNofl3O29fYLyLhgCTNviD8Zkl9PO8NumSnaoz+Vjev9mpuTn6pGinmQW5o1fxqnjeoRiyK5VhUUAosIGcxwd/PWHZn9S030cbzYbuRlWZZb8LvhA6fWmlc2rfGXZGR6CmhEdigv93afVlfzIzXQsDd77gdE7N9RDgcftbV0wHYDBluqyspDaSTSFIDzsXfMmnt8vau33ClQJ3cyCvDCLWHF9CfqX//6phcPTFVuN8Rf/cpz/gBXgd/NDPK/+zMrqNUrvrpvWH/Nligd9zflCPCRXm5L6ukNso3WF/IRUvs9ZWa+gm0Szmrc+ZFQ3zTp
+  template:
+    data: null
+    metadata:
+      creationTimestamp: null
+      name: digital-ocean-token
+      namespace: flux-system
+
