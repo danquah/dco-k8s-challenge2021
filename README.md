@@ -7,7 +7,11 @@ This repository was created as a part of completing the Digital Ocean
 
 I've chosen the Crossplane challenge, the description simply reads
 
- > Install Crossplane, which is like Terraform but you manage the infra from inside Kubernetes, not from outside. Crossplane is an open source Kubernetes add-on that enables platform teams to assemble infrastructure from multiple vendors, and expose higher level self-service APIs for application teams to consume, without having to write any code.
+ > Install Crossplane, which is like Terraform but you manage the infra from
+ > inside Kubernetes, not from outside. Crossplane is an open source Kubernetes
+ > add-on that enables platform teams to assemble infrastructure from multiple
+ > vendors, and expose higher level self-service APIs for application teams to
+ > consume, without having to write any code.
 
 As as secondary goal I also want to
 
@@ -17,8 +21,10 @@ As as secondary goal I also want to
 
 ## Approach
 
-We will need a functional Kubernetes cluster in order to install and use Crossplane. To keep to the sub-goal of setting things up "for real" I've chosen to follow [Chapter 15 of Kubernetes-Starter-Kit-Developers](https://github.com/digitalocean/Kubernetes-Starter-Kit-Developers/tree/main/15-automate-with-terraform-flux) which sets up a fully production-ready cluster
-and even uses Flux.
+We will need a functional Kubernetes cluster in order to install and use Crossplane.
+To keep to the sub-goal of setting things up "for real" I've chosen to follow
+[Chapter 15 of Kubernetes-Starter-Kit-Developers](https://github.com/digitalocean/Kubernetes-Starter-Kit-Developers/tree/main/15-automate-with-terraform-flux)
+which sets up a fully production-ready cluster and even uses Flux.
 
 With the cluster up and running, we'll configure Crossplane, and provision
 something.
@@ -30,7 +36,8 @@ with a couple of modifications.
 
 I've documented the places I deviate below:
 
-1. Setup the required [prerequisites](https://github.com/digitalocean/Kubernetes-Starter-Kit-Developers/tree/main/15-automate-with-terraform-flux#prerequisites), with the following tweaks
+1. Setup the required [prerequisites](https://github.com/digitalocean/Kubernetes-Starter-Kit-Developers/tree/main/15-automate-with-terraform-flux#prerequisites),
+   with the following tweaks
    1. Don't create the Flux CD repo, we'll do that with Terraform
    2. Add the various tokens and keys the guide instruction to create to
       `creds.env` (use `dist-creds.env` as a template).
@@ -48,9 +55,14 @@ I've documented the places I deviate below:
 All in all the everything worked out. There are a number of areas that could be
 improved, in particular if this setup is to be used for a real production setup:
 
-1. All credentials are currently kept in the developers checkout of the repository. These credentials should be placed somewhere safe that could be accessed by other team-members. Digital Ocean does not have a key vault/key store product. An alternative would be to check encrypted credentials in to the GitHub repo, or adding all credentials as secrets to the cluster and run them via actions. There are plenty of products to choose between.
-2.- I could have used separate spaces access/secret keys for everything, but to keep
-  everything simple I've opted for just reusing the same key. Should one wish
+1. All credentials are currently kept in the developers checkout of the repository.
+   These credentials should be placed somewhere safe that could be accessed by
+   other team-members. Digital Ocean does not have a key vault/key store product.
+   An alternative would be to check encrypted credentials in to the GitHub repo,
+   or adding all credentials as secrets to the cluster and run them via actions.
+   There are plenty of products to choose between.
+2.- I could have used separate spaces access/secret keys for everything, but to
+  keep everything simple I've opted for just reusing the same key. Should one wish
   to use this setup for real, separate keys should be introduced. The same key is
   currently used by
 
