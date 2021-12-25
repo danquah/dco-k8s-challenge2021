@@ -38,7 +38,7 @@ yet another cluster. You can't have to many clusters.
 The following diagram gives an overview of what we're deploying with a focus on
 the Crossplane parts. I've internationally left out some of the pieces from the
 Starter Kit such as the administration of the Terraform state.
-![deployment overview](images/overview.svg)
+![deployment overview](images/overview.png)
 
 ## Installing the Kubernetes Starter Kit
 
