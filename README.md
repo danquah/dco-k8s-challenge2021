@@ -3,6 +3,10 @@
 This repository was created as a part of completing the Digital Ocean
 [Kubernetes Challenge](https://www.digitalocean.com/community/pages/kubernetes-challenge).
 
+All Flux-configuration made in the guide below can be found in a separate
+[danquah/dco-k8s-challenge2021-flux](https://github.com/danquah/dco-k8s-challenge2021-flux)
+repository.
+
 ## Main and secondary goals
 
 I've chosen the Crossplane challenge, the description simply reads
@@ -36,7 +40,6 @@ the Crossplane parts. I've internationally left out some of the pieces from the
 Starter Kit such as the administration of the Terraform state.
 ![deployment overview](images/overview.svg)
 
-
 ## Installing the Kubernetes Starter Kit
 
 This is more or less just a question of following [Chapter 15 of Kubernetes-Starter-Kit-Developers](https://github.com/digitalocean/Kubernetes-Starter-Kit-Developers/tree/main/15-automate-with-terraform-flux)
@@ -64,7 +67,6 @@ Next we set up Crossplane. We follow the pattern established by the starter kit:
 
 * Use Helm chart/releases
 * Install the release via Flux
-
 
 We'll be using the [official Helm Chart](https://artifacthub.io/packages/helm/crossplane/crossplane):
 
@@ -118,8 +120,8 @@ Wait for crossplane to be up and running, you can verify this by running
 ```shell
 $ flux get kustomization
 
-NAME      	READY	MESSAGE                         	REVISION	SUSPENDED
-crossplane	True 	Release reconciliation succeeded	1.5.1   	False
+NAME       READY MESSAGE                          REVISION SUSPENDED
+crossplane True  Release reconciliation succeeded 1.5.1    False
 ```
 
 With this in place we can install a provider into the cluster and start
@@ -137,7 +139,7 @@ So, instead we'll have to follow some somewhat more manual steps.
 Prerequisites:
 
 * A functional Go environment
-* A clone of https://github.com/crossplane-contrib/provider-digitalocean.git
+* A clone of [crossplane-contrib/provider-digitalocean](https://github.com/crossplane-contrib/provider-digitalocean)
 * A token for a Digitalocean account.
 
 A crossplane provider needs 4 things.
@@ -260,6 +262,7 @@ All kustomizations should report `Ready = true`
 ## Using Crossplane
 
 Then with everything working, launch the provider
+
 ```shell
 # From inside the clone of provider-digitalocean.git:
 go run cmd/provider/main.go --debug
@@ -378,7 +381,6 @@ Status:
 Also, taking a look at the DO console we should now have two clusters:
 
 ![do console cluster list](images/cluster-list.png)
-
 
 ## Evaluation
 
